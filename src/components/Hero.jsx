@@ -1,29 +1,13 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import heroVideo from '../assets/hero.mp4';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white dark:bg-black transition-colors duration-500 pt-20 md:pt-0">
-            {/* Video Background */}
-            <div className="absolute inset-0 z-0">
-                <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover"
-                >
-                    <source src={heroVideo} type="video/mp4" />
-                </video>
-                {/* Overlay for readability */}
-                <div className="absolute inset-0 dark:bg-black/70 dark:backdrop-blur-[1px]" style={{ background: 'linear-gradient(160deg, rgba(15,15,25,0.72) 0%, rgba(10,10,20,0.55) 50%, rgba(20,15,35,0.68) 100%)' }} />
-            </div>
-
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white dark:bg-black transition-colors duration-500 pt-20">
             {/* Ambient Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
-                <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-indigo-500/10 dark:bg-white/5 rounded-full blur-[160px] animate-pulse" />
-                <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500/10 dark:bg-white/[0.02] rounded-full blur-[140px]" />
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-slate-200/50 dark:bg-white/5 rounded-full blur-[120px] animate-pulse" />
+                <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-slate-100/30 dark:bg-white/[0.02] rounded-full blur-[100px]" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
@@ -53,7 +37,7 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.8, duration: 1 }}
-                            className="text-lg md:text-xl font-medium text-white/80 dark:text-slate-300 mt-8 tracking-tight max-w-2xl mx-auto drop-shadow-sm"
+                            className="text-lg md:text-xl font-medium text-slate-500 dark:text-slate-400 mt-8 tracking-tight max-w-2xl mx-auto"
                         >
                             Precision outbound infrastructure. <br className="hidden md:block" /> Powered by advanced AI intelligence.
                         </motion.p>
@@ -61,7 +45,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* Pilled Vertical Scroller */}
+            {/* Pilled Vertical Scroller - Moved to section level to avoid overlap */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
