@@ -10,15 +10,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
     "@tailwindcss/postcss": "^4.2.0",
     "framer-motion": "^12.34.3",
+    "gsap": "^3.14.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "latest"
+    "react-reconciler": "^0.29.0",
+    "react-router-dom": "latest",
+    "three": "^0.160.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.183.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "latest",
     "postcss": "latest",

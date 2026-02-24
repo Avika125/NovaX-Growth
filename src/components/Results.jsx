@@ -1,4 +1,74 @@
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+
+const TiltCard = ({ item, index }) => {
+    const cardRef = useRef(null);
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseSpringX = useSpring(x);
+    const mouseSpringY = useSpring(y);
+
+    const rotateX = useTransform(mouseSpringY, [-0.5, 0.5], ["10deg", "-10deg"]);
+    const rotateY = useTransform(mouseSpringX, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+    const handleMouseMove = (e) => {
+        if (!cardRef.current) return;
+        const rect = cardRef.current.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const xPct = (mouseX / width) - 0.5;
+        const yPct = (mouseY / height) - 0.5;
+        x.set(xPct);
+        y.set(yPct);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0);
+        y.set(0);
+    };
+
+    return (
+        <motion.div
+            ref={cardRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            className="bg-white dark:bg-dark-800 p-10 rounded-2xl border border-palette-700/10 dark:border-dark-700 shadow-sm hover:shadow-xl transition-shadow duration-500 perspective-1000 group"
+        >
+            <div style={{ transform: "translateZ(50px)" }}>
+                <p className="text-2xl text-slate-800 dark:text-dark-100 mb-8 leading-snug font-medium italic">
+                    "{item.quote}"
+                </p>
+
+                <div className="flex items-center gap-4">
+                    <img
+                        src={item.avatar}
+                        alt={item.name}
+                        className="w-14 h-14 rounded-full bg-slate-100 dark:bg-dark-700 border-2 border-palette-200 dark:border-palette-700"
+                    />
+                    <div>
+                        <h4 className="font-bold text-slate-950 dark:text-dark-100 text-base">
+                            {item.name}
+                        </h4>
+                        <p className="text-palette-600 dark:text-palette-400 text-sm font-semibold">
+                            {item.role}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Background highlight */}
+            <div className="absolute inset-0 bg-gradient-to-br from-palette-700/5 to-transparent dark:from-palette-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
+        </motion.div>
+    );
+};
 
 const Results = () => {
     const testimonials = [
@@ -41,14 +111,14 @@ const Results = () => {
     ];
 
     return (
-        <section className="py-24 bg-[#F9F8F3] dark:bg-dark-900 transition-colors duration-300">
+        <section className="py-24 bg-[#F9F8F3] dark:bg-dark-900 transition-colors duration-300 overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="text-xs font-bold text-slate-400 dark:text-dark-600 uppercase tracking-[0.3em] mb-4 block"
+                        className="text-xs font-black text-palette-600 dark:text-palette-400 uppercase tracking-[0.4em] mb-4 block"
                     >
                         RELIED ON BY TOP PERFORMERS
                     </motion.span>
@@ -57,9 +127,9 @@ const Results = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-7xl font-serif text-slate-900 dark:text-dark-100 mb-6 leading-tight"
+                        className="text-5xl md:text-8xl font-serif text-slate-900 dark:text-dark-100 mb-8 leading-[1.1] tracking-tighter"
                     >
-                        Automation that <br /> drives real results
+                        Automation that <br /> <span className="text-palette-600">drives real results</span>
                     </motion.h2>
 
                     <motion.p
@@ -67,42 +137,15 @@ const Results = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-lg text-slate-600 dark:text-dark-200 max-w-2xl mx-auto"
+                        className="text-xl md:text-2xl text-slate-600 dark:text-dark-200 max-w-3xl mx-auto font-medium"
                     >
                         Discover how leading teams accelerate pipeline and close more deals with intelligent outbound automation.
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {testimonials.map((item, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="bg-white dark:bg-dark-800 p-10 rounded-2xl border border-slate-100 dark:border-dark-700 shadow-sm hover:shadow-md transition-shadow duration-300"
-                        >
-                            <p className="text-2xl text-slate-800 dark:text-dark-100 mb-8 leading-snug font-medium">
-                                "{item.quote}"
-                            </p>
-
-                            <div className="flex items-center gap-4">
-                                <img
-                                    src={item.avatar}
-                                    alt={item.name}
-                                    className="w-12 h-12 rounded-full bg-slate-100 dark:bg-dark-700"
-                                />
-                                <div>
-                                    <h4 className="font-bold text-slate-950 dark:text-dark-100 text-sm">
-                                        {item.name}
-                                    </h4>
-                                    <p className="text-slate-400 dark:text-dark-600 text-xs">
-                                        {item.role}
-                                    </p>
-                                </div>
-                            </div>
-                        </motion.div>
+                        <TiltCard key={index} item={item} index={index} />
                     ))}
                 </div>
 
@@ -111,10 +154,10 @@ const Results = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.6 }}
-                    className="text-center mt-16"
+                    className="text-center mt-20"
                 >
-                    <button className="px-8 py-3 bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-lg font-semibold transition-all shadow-lg shadow-indigo-500/20">
-                        View proof
+                    <button className="px-12 py-5 bg-palette-600 hover:bg-palette-700 text-white rounded-full font-bold text-lg transition-all shadow-2xl shadow-palette-600/30 hover:scale-105 active:scale-95">
+                        View More Success Stories
                     </button>
                 </motion.div>
             </div>

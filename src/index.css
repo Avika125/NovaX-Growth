@@ -186,3 +186,35 @@ body,
         background-position: 0% 50%;
     }
 }
+
+/* ─── Interactive & Beauty Utilities ────────────────────────────────────── */
+
+.glass-morphism {
+    @apply backdrop-blur-md bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10 shadow-sm dark:shadow-none;
+}
+
+.glass-morphism-strong {
+    @apply backdrop-blur-xl bg-white/20 dark:bg-black/40 border border-white/30 dark:border-white/20 shadow-md dark:shadow-none;
+}
+
+.text-glow {
+    text-shadow: 0 0 20px rgba(133, 79, 108, 0.3);
+}
+
+.dark .text-glow {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+/* Custom Scrollbar for Marquee or list */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

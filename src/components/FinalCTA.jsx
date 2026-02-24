@@ -53,26 +53,26 @@ const FinalCTA = () => {
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="p-10 rounded-3xl bg-palette-200 dark:bg-palette-800 border border-palette-700/10 dark:border-palette-700 shadow-2xl relative"
+                        className="p-10 rounded-3xl bg-white dark:bg-palette-800 border border-palette-700/10 dark:border-palette-700 shadow-2xl relative"
                     >
                         <form className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-palette-900 dark:text-palette-200">Full Name</label>
-                                    <input type="text" className="w-full p-4 rounded-xl bg-palette-100 dark:bg-palette-700/50 border border-palette-700/10 dark:border-palette-700 text-palette-900 dark:text-palette-100 placeholder-palette-600/50 dark:placeholder-palette-600 outline-none transition-all" placeholder="John Doe" />
+                                    <input type="text" className="w-full p-4 rounded-xl bg-[#FBE4D8]/50 dark:bg-palette-700/50 border border-palette-700/10 dark:border-palette-700 text-palette-900 dark:text-palette-100 placeholder-palette-600/50 dark:placeholder-palette-600 outline-none transition-all focus:border-palette-600/30" placeholder="John Doe" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-palette-900 dark:text-palette-200">Work Email</label>
-                                    <input type="email" className="w-full p-4 rounded-xl bg-palette-100 dark:bg-palette-700/50 border border-palette-700/10 dark:border-palette-700 text-palette-900 dark:text-palette-100 placeholder-palette-600/50 dark:placeholder-palette-600 outline-none transition-all" placeholder="john@company.com" />
+                                    <input type="email" className="w-full p-4 rounded-xl bg-[#FBE4D8]/50 dark:bg-palette-700/50 border border-palette-700/10 dark:border-palette-700 text-palette-900 dark:text-palette-100 placeholder-palette-600/50 dark:placeholder-palette-600 outline-none transition-all focus:border-palette-600/30" placeholder="john@company.com" />
                                 </div>
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-palette-900 dark:text-palette-200">Company Website</label>
-                                <input type="text" className="w-full p-4 rounded-xl bg-palette-100 dark:bg-palette-700/50 border border-palette-700/10 dark:border-palette-700 text-palette-900 dark:text-palette-100 placeholder-palette-600/50 dark:placeholder-palette-600 outline-none transition-all" placeholder="https://company.com" />
+                                <input type="text" className="w-full p-4 rounded-xl bg-[#FBE4D8]/50 dark:bg-palette-700/50 border border-palette-700/10 dark:border-palette-700 text-palette-900 dark:text-palette-100 placeholder-palette-600/50 dark:placeholder-palette-600 outline-none transition-all focus:border-palette-600/30" placeholder="https://company.com" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-palette-900 dark:text-palette-200">What's your biggest outbound challenge?</label>
-                                <textarea rows="3" className="w-full p-4 rounded-xl bg-palette-100 dark:bg-palette-700/50 border border-palette-700/10 dark:border-palette-700 text-palette-900 dark:text-palette-100 placeholder-palette-600/50 dark:placeholder-palette-600 outline-none transition-all" placeholder="Tell us about your current funnel..."></textarea>
+                                <textarea rows="3" className="w-full p-4 rounded-xl bg-[#FBE4D8]/50 dark:bg-palette-700/50 border border-palette-700/10 dark:border-palette-700 text-palette-900 dark:text-palette-100 placeholder-palette-600/50 dark:placeholder-palette-600 outline-none transition-all focus:border-palette-600/30" placeholder="Tell us about your current funnel..."></textarea>
                             </div>
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
