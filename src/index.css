@@ -7,34 +7,182 @@
 :root {
     font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-    /* Cinematic Titanium Text Effect */
-    .titanium-text {
-        @apply font-black tracking-tighter uppercase;
-        background-size: 200% auto;
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.1));
-        animation: shimmer 10s linear infinite;
-    }
+    /* Base Palette Variables */
+    --color-900: #190019;
+    --color-800: #2B124C;
+    --color-700: #522B5B;
+    --color-600: #854F6C;
+    --color-200: #DFB6B2;
+    --color-100: #FBE4D8;
 
-    @keyframes shimmer {
-        0% {
-            background-position: 0% 50%;
-        }
+    /* Light Theme (Default) */
+    --bg-page: var(--color-100);
+    /* #FBE4D8 — Background */
+    --bg-surface: var(--color-200);
+    /* #DFB6B2 — Surface */
+    --text-primary: var(--color-900);
+    /* #190019 — Primary Text */
+    --text-secondary: var(--color-800);
+    /* #2B124C — Secondary Text */
+    --btn-primary: var(--color-600);
+    /* #854F6C — Primary Button */
+    --btn-text: #FFFFFF;
+    /* #FFFFFF — Button Text */
 
-        50% {
-            background-position: 100% 50%;
-        }
-
-        100% {
-            background-position: 0% 50%;
-        }
-    }
+    /* Apply default light theme */
+    background-color: var(--bg-page);
+    color: var(--text-primary);
 }
 
-body {
-    margin: 0;
-    overflow-x: hidden;
-    transition: background-color 0.3s, color 0.3s;
+/* ─── Global Light Theme Overrides ───────────────────────────────────────── */
+/* Maps legacy light-mode Tailwind classes to the new palette                */
+
+/* Root backgrounds */
+body,
+.bg-white,
+[class*="bg-slate-50"] {
+    background-color: var(--bg-page) !important;
+}
+
+/* Surfaces / Cards */
+.bg-slate-100,
+.bg-slate-200,
+[class*="bg-slate-50/"] {
+    background-color: var(--bg-surface) !important;
+}
+
+/* Primary text */
+.text-slate-900,
+.text-slate-950,
+.text-black {
+    color: var(--text-primary) !important;
+}
+
+/* Secondary / Muted text */
+.text-slate-600,
+.text-slate-500,
+.text-slate-400 {
+    color: var(--text-secondary) !important;
+}
+
+/* Primary Buttons override */
+.bg-blue-600,
+.bg-indigo-600 {
+    background-color: var(--btn-primary) !important;
+    color: var(--btn-text) !important;
+}
+
+.bg-blue-600:hover,
+.bg-indigo-600:hover {
+    background-color: var(--color-700) !important;
+    /* Slightly darker purple for hover */
+}
+
+/* Icon / Graphic accents (blue-50/600 etc) */
+.text-blue-600,
+.text-indigo-600 {
+    color: var(--btn-primary) !important;
+}
+
+.bg-blue-50,
+.bg-indigo-50 {
+    background-color: color-mix(in srgb, var(--btn-primary) 10%, transparent) !important;
+}
+
+.shadow-blue-500\/30 {
+    box-shadow: 0 10px 15px -3px color-mix(in srgb, var(--btn-primary) 30%, transparent), 0 4px 6px -4px color-mix(in srgb, var(--btn-primary) 30%, transparent) !important;
+}
+
+/* ─── Dark Theme: Global Palette Overrides ───────────────────────────────── */
+
+.dark {
+    /* Page & section backgrounds */
+    --bg-page: var(--color-900);
+    --bg-surface: var(--color-800);
+    --bg-muted: var(--color-700);
+    --bg-accent: var(--color-600);
+
+    /* Text */
+    --text-primary: var(--color-100);
+    --text-secondary: var(--color-200);
+    --text-muted: var(--color-600);
+
+    /* Borders */
+    --border-default: var(--color-700);
+    --border-subtle: var(--color-800);
+
+    /* Root override */
+    background-color: var(--color-900);
+    color: var(--color-100);
+    color-scheme: dark;
+}
+
+/* Override Tailwind dark utilities */
+.dark .bg-black,
+.dark [class*="dark:bg-black"],
+.dark [class*="dark:bg-dark-900"] {
+    background-color: var(--color-900) !important;
+}
+
+.dark [class*="dark:bg-slate-900"],
+.dark [class*="dark:bg-dark-800"] {
+    background-color: var(--color-800) !important;
+}
+
+.dark [class*="dark:bg-slate-800"],
+.dark [class*="dark:bg-dark-700"] {
+    background-color: var(--color-700) !important;
+}
+
+/* Card / surface backgrounds (white/5, white/10 patterns) */
+.dark [class*="dark:bg-white\/5"],
+.dark [class*="dark:bg-white/5"] {
+    background-color: color-mix(in srgb, var(--color-800) 90%, transparent) !important;
+}
+
+.dark [class*="dark:bg-white\/10"],
+.dark [class*="dark:bg-white/10"] {
+    background-color: color-mix(in srgb, var(--color-700) 80%, transparent) !important;
+}
+
+/* Text overrides */
+.dark [class*="dark:text-white"]:not([class*="dark:text-white\/"]),
+.dark [class*="dark:text-dark-100"] {
+    color: var(--color-100) !important;
+}
+
+.dark [class*="dark:text-slate-400"],
+.dark [class*="dark:text-slate-300"],
+.dark [class*="dark:text-dark-200"] {
+    color: var(--color-200) !important;
+}
+
+.dark [class*="dark:text-slate-500"],
+.dark [class*="dark:text-dark-600"] {
+    color: var(--color-600) !important;
+}
+
+/* Primary text Titanium effect */
+.titanium-text {
+    @apply font-black tracking-tighter uppercase;
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.1));
+    animation: shimmer 10s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }

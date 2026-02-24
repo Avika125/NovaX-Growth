@@ -14,7 +14,7 @@ const About = () => {
     }, []);
 
     return (
-        <div className="bg-white dark:bg-black min-h-screen transition-colors duration-500 overflow-x-hidden">
+        <div className="bg-white dark:bg-dark-900 min-h-screen transition-colors duration-500 overflow-x-hidden">
             <Navbar />
 
             <main>

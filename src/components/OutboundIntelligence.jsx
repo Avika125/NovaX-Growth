@@ -29,7 +29,7 @@ const OutboundIntelligence = () => {
     ];
 
     return (
-        <section className="py-24 bg-white dark:bg-black transition-colors duration-300 overflow-hidden">
+        <section className="py-24 bg-white dark:bg-dark-900 transition-colors duration-300 overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20">
                     <motion.div
@@ -38,7 +38,7 @@ const OutboundIntelligence = () => {
                         viewport={{ once: true }}
                         className="mb-4 inline-block"
                     >
-                        <span className="text-sm font-bold text-slate-800 dark:text-slate-300 uppercase tracking-widest px-4 py-1 rounded-full border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5">
+                        <span className="text-sm font-bold text-slate-800 dark:text-dark-200 uppercase tracking-widest px-4 py-1 rounded-full border border-slate-200 dark:border-dark-700 bg-slate-50 dark:bg-dark-800">
                             ⚡ SECTION 2 — The System
                         </span>
                     </motion.div>
@@ -47,7 +47,7 @@ const OutboundIntelligence = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 leading-tight"
+                        className="text-4xl md:text-5xl font-black text-slate-900 dark:text-dark-100 mb-6 leading-tight"
                     >
                         Outbound intelligence. <br className="hidden md:block" />
                         <span className="text-slate-400">Automated. Precise.</span>
@@ -58,7 +58,7 @@ const OutboundIntelligence = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+                        className="text-xl text-slate-600 dark:text-dark-200 max-w-2xl mx-auto"
                     >
                         AI-driven workflows for lead analysis, outreach, and engagement. <br className="hidden md:block" />
                         Built for high-performing sales teams.
@@ -74,24 +74,24 @@ const OutboundIntelligence = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             whileHover={{ y: -8 }}
-                            className="relative group p-8 rounded-3xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 transition-all duration-500"
+                            className="relative group p-8 rounded-3xl bg-slate-50 dark:bg-dark-800/40 border border-slate-100 dark:border-dark-700 transition-all duration-500"
                         >
                             <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`} />
 
                             <div className="relative z-10">
-                                <div className="text-4xl mb-6 bg-white dark:bg-black/20 w-16 h-16 flex items-center justify-center rounded-2xl shadow-sm border border-slate-100 dark:border-white/5 group-hover:scale-110 transition-transform duration-500">
+                                <div className="text-4xl mb-6 bg-white dark:bg-dark-800/20 w-16 h-16 flex items-center justify-center rounded-2xl shadow-sm border border-slate-100 dark:border-dark-700 group-hover:scale-110 transition-transform duration-500">
                                     {feature.emoji}
                                 </div>
-                                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                                <h3 className="text-2xl font-bold text-slate-900 dark:text-dark-100 mb-4">
                                     {feature.title}
                                 </h3>
-                                <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                                <p className="text-lg text-slate-600 dark:text-dark-200 leading-relaxed">
                                     {feature.description}
                                 </p>
                             </div>
 
                             {/* Decorative line */}
-                            <div className="absolute bottom-6 right-8 w-12 h-1 bg-slate-200 dark:bg-white/10 rounded-full group-hover:w-20 group-hover:bg-slate-900 dark:group-hover:bg-white transition-all duration-500" />
+                            <div className="absolute bottom-6 right-8 w-12 h-1 bg-slate-200 dark:bg-dark-700 rounded-full group-hover:w-20 group-hover:bg-slate-900 dark:group-hover:bg-dark-100 transition-all duration-500" />
                         </motion.div>
                     ))}
                 </div>

@@ -14,21 +14,21 @@ const Lifecycle = () => {
     ];
 
     return (
-        <section className="py-24 bg-white dark:bg-black transition-colors duration-300 relative overflow-hidden">
+        <section className="py-24 bg-white dark:bg-dark-900 transition-colors duration-300 relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-sm font-bold text-slate-800 dark:text-slate-300 uppercase tracking-widest mb-4"
+                        className="text-sm font-bold text-slate-800 dark:text-dark-200 uppercase tracking-widest mb-4"
                     >
                         📊 SECTION 5 — Full Lead Lifecycle Automation
                     </motion.h2>
-                    <h3 className="text-4xl md:text-5xl font-black text-slate-950 dark:text-white mb-6">
+                    <h3 className="text-4xl md:text-5xl font-black text-slate-950 dark:text-dark-100 mb-6">
                         From CSV Upload to Closed Deal
                     </h3>
-                    <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                    <p className="text-xl text-slate-600 dark:text-dark-200 max-w-2xl mx-auto">
                         Everything connected. Nothing manual.
                     </p>
                 </div>
@@ -47,10 +47,10 @@ const Lifecycle = () => {
                                 transition={{ delay: index * 0.1 }}
                                 className="flex flex-col items-center text-center group"
                             >
-                                <div className="w-16 h-16 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 group-hover:bg-slate-950 dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-slate-950 transition-all shadow-sm">
+                                <div className="w-16 h-16 rounded-2xl bg-slate-50 dark:bg-dark-800 border border-slate-200 dark:border-dark-700 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 group-hover:bg-slate-950 dark:group-hover:bg-dark-100 group-hover:text-white dark:group-hover:text-dark-900 transition-all shadow-sm">
                                     {step.icon}
                                 </div>
-                                <h4 className="text-sm font-bold text-slate-900 dark:text-slate-200 px-2 leading-tight">
+                                <h4 className="text-sm font-bold text-slate-900 dark:text-dark-200 px-2 leading-tight">
                                     {step.title}
                                 </h4>
                             </motion.div>

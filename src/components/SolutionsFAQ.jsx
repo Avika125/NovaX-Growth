@@ -22,14 +22,14 @@ const SolutionsFAQ = () => {
     ];
 
     return (
-        <section className="py-20 bg-slate-50 dark:bg-zinc-900/10 transition-colors duration-500">
+        <section className="py-20 bg-slate-50 dark:bg-dark-900 transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <div className="max-w-3xl">
                     <motion.h2
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-7xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white mb-4"
+                        className="text-5xl md:text-7xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100 mb-4"
                     >
                         FAQ: outbound <br /> automation
                     </motion.h2>
@@ -38,7 +38,7 @@ const SolutionsFAQ = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-slate-500 dark:text-slate-400 text-xs font-bold tracking-tight mb-16"
+                        className="text-slate-500 dark:text-dark-200 text-xs font-bold tracking-tight mb-16"
                     >
                         Essential answers for sales automation.
                     </motion.p>
@@ -51,12 +51,12 @@ const SolutionsFAQ = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="py-8 border-t border-slate-200 dark:border-white/10 flex flex-col md:flex-row gap-6 md:gap-12"
+                                className="py-8 border-t border-slate-200 dark:border-dark-700 flex flex-col md:flex-row gap-6 md:gap-12"
                             >
-                                <h3 className="text-base font-medium text-slate-900 dark:text-white md:w-1/3">
+                                <h3 className="text-base font-medium text-slate-900 dark:text-dark-100 md:w-1/3">
                                     {faq.question}
                                 </h3>
-                                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed md:w-2/3">
+                                <p className="text-xs text-slate-500 dark:text-dark-200 leading-relaxed md:w-2/3">
                                     {faq.answer}
                                 </p>
                             </motion.div>
@@ -70,7 +70,7 @@ const SolutionsFAQ = () => {
                         transition={{ delay: 0.5 }}
                         className="pt-8 space-y-1.5"
                     >
-                        <p className="text-xs font-bold text-slate-900 dark:text-white">Have a specific question not listed?</p>
+                        <p className="text-xs font-bold text-slate-900 dark:text-dark-100">Have a specific question not listed?</p>
                         <a href="#" className="inline-flex items-center gap-2 text-blue-600 text-xs font-bold group">
                             Contact us <span className="group-hover:translate-x-1 transition-transform">→</span>
                         </a>

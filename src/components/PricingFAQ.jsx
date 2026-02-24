@@ -28,7 +28,7 @@ const PricingFAQ = () => {
     ];
 
     return (
-        <section className="py-24 bg-white dark:bg-black transition-colors duration-500">
+        <section className="py-24 bg-white dark:bg-dark-900 transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 max-w-6xl mx-auto">
                     <div className="lg:w-1/3">
@@ -36,7 +36,7 @@ const PricingFAQ = () => {
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            className="text-[9px] font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-[0.4em] block mb-6"
+                            className="text-[9px] font-bold text-slate-400 dark:text-dark-600 uppercase tracking-[0.4em] block mb-6"
                         >
                             PRICING FAQ
                         </motion.span>
@@ -44,7 +44,7 @@ const PricingFAQ = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-5xl md:text-7xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white leading-[1.1] mb-8"
+                            className="text-5xl md:text-7xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100 leading-[1.1] mb-8"
                         >
                             Billing questions, <br /> answered fast
                         </motion.h2>
@@ -53,7 +53,7 @@ const PricingFAQ = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-slate-500 dark:text-slate-400 text-[13px] leading-relaxed mb-10"
+                            className="text-slate-500 dark:text-dark-200 text-[13px] leading-relaxed mb-10"
                         >
                             Clear, direct answers to your pricing and billing questions.
                         </motion.p>
@@ -75,13 +75,13 @@ const PricingFAQ = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-[#FDFCF9] dark:bg-zinc-900/40 border border-slate-100 dark:border-white/5 rounded-2xl overflow-hidden"
+                                className="bg-[#FDFCF9] dark:bg-dark-800/40 border border-slate-100 dark:border-dark-700 rounded-2xl overflow-hidden"
                             >
                                 <button
                                     onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                                     className="w-full px-8 py-6 text-left flex items-center justify-between group"
                                 >
-                                    <span className="text-sm font-medium text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">
+                                    <span className="text-sm font-medium text-slate-900 dark:text-dark-100 group-hover:text-blue-600 transition-colors">
                                         {faq.question}
                                     </span>
                                     <span className={`text-slate-400 transition-transform duration-300 ${activeIndex === index ? 'rotate-180' : ''}`}>
@@ -99,7 +99,7 @@ const PricingFAQ = () => {
                                             transition={{ duration: 0.3 }}
                                             className="overflow-hidden"
                                         >
-                                            <div className="px-8 pb-6 text-xs text-slate-500 dark:text-slate-400 leading-relaxed border-t border-slate-100/50 dark:border-white/5 pt-4">
+                                            <div className="px-8 pb-6 text-xs text-slate-500 dark:text-dark-200 leading-relaxed border-t border-slate-100/50 dark:border-dark-700 pt-4">
                                                 {faq.answer}
                                             </div>
                                         </motion.div>

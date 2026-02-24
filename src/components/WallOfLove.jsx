@@ -41,23 +41,23 @@ const testimonials = [
 
 const WallOfLove = () => {
     return (
-        <section className="py-24 bg-slate-50 dark:bg-black transition-colors duration-300 overflow-hidden">
+        <section className="py-24 bg-slate-50 dark:bg-dark-900 transition-colors duration-300 overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-6"
+                        className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-dark-100 mb-6"
                     >
-                        The Wall of <span className="text-slate-950 dark:text-white">Love.</span>
+                        The Wall of <span className="text-slate-950 dark:text-dark-200">Love.</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-xl text-slate-600 dark:text-slate-400"
+                        className="text-xl text-slate-600 dark:text-dark-200"
                     >
                         Join 200+ high-growth companies scaling their revenue with AI Lead Automation.
                     </motion.p>
@@ -72,18 +72,18 @@ const WallOfLove = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05 }}
                             whileHover={{ scale: 1.02 }}
-                            className="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm"
+                            className="p-8 rounded-2xl bg-white dark:bg-dark-800/60 border border-slate-200 dark:border-dark-700 shadow-sm"
                         >
                             <div className="flex items-center space-x-4 mb-6">
-                                <div className="w-12 h-12 rounded-full bg-slate-950 dark:bg-white flex items-center justify-center text-white dark:text-slate-950 font-bold">
+                                <div className="w-12 h-12 rounded-full bg-dark-700 dark:bg-dark-600 flex items-center justify-center text-dark-100 font-bold">
                                     {item.avatar}
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">{item.name}</h3>
-                                    <p className="text-sm text-slate-500 dark:text-slate-500">{item.role}</p>
+                                    <h3 className="text-lg font-bold text-slate-900 dark:text-dark-100">{item.name}</h3>
+                                    <p className="text-sm text-slate-500 dark:text-dark-600">{item.role}</p>
                                 </div>
                             </div>
-                            <p className="text-slate-600 dark:text-slate-400 italic leading-relaxed">
+                            <p className="text-slate-600 dark:text-dark-200 italic leading-relaxed">
                                 "{item.content}"
                             </p>
                         </motion.div>

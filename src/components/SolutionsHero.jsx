@@ -12,7 +12,7 @@ const SolutionsHero = () => {
     ];
 
     return (
-        <section className="relative pt-32 pb-16 overflow-hidden bg-white dark:bg-black transition-colors duration-500">
+        <section className="relative pt-32 pb-16 overflow-hidden bg-white dark:bg-dark-900 transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     {/* Left: Content */}
@@ -22,14 +22,14 @@ const SolutionsHero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="text-[9px] font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-[0.4em] block mb-4">
+                            <span className="text-[9px] font-bold text-slate-400 dark:text-dark-600 uppercase tracking-[0.4em] block mb-4">
                                 AI-POWERED OUTBOUND INTELLIGENCE
                             </span>
-                            <h1 className="text-5xl md:text-7xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white leading-[1.1] mb-6">
+                            <h1 className="text-5xl md:text-7xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100 leading-[1.1] mb-6">
                                 Automate, analyze, <br />
                                 accelerate growth
                             </h1>
-                            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed mb-8">
+                            <p className="text-lg text-slate-600 dark:text-dark-200 max-w-lg leading-relaxed mb-8">
                                 Streamline lead analysis, outreach, and follow-up. Detect gaps, score opportunities, and drive conversions—always with human oversight.
                             </p>
 
@@ -37,7 +37,7 @@ const SolutionsHero = () => {
                                 <button className="px-6 py-2.5 bg-blue-600 text-white rounded-xl text-sm font-bold shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition-all duration-300">
                                     Demo
                                 </button>
-                                <button className="px-6 py-2.5 bg-slate-100 dark:bg-zinc-900 text-slate-900 dark:text-white rounded-xl text-sm font-bold border border-slate-200 dark:border-white/5 hover:bg-slate-200 dark:hover:bg-zinc-800 transition-all duration-300">
+                                <button className="px-6 py-2.5 bg-slate-100 dark:bg-dark-800 text-slate-900 dark:text-dark-100 rounded-xl text-sm font-bold border border-slate-200 dark:border-dark-700 hover:bg-slate-200 dark:hover:bg-dark-700 transition-all duration-300">
                                     Process
                                 </button>
                             </div>

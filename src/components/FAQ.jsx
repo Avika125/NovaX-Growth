@@ -28,16 +28,16 @@ const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
     return (
-        <section className="py-24 bg-slate-50 dark:bg-black transition-colors duration-300">
+        <section className="py-24 bg-slate-50 dark:bg-dark-900 transition-colors duration-300">
             <div className="container mx-auto px-6 max-w-4xl">
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl font-display font-bold text-slate-900 dark:text-white mb-6"
+                        className="text-4xl font-display font-bold text-slate-900 dark:text-dark-100 mb-6"
                     >
-                        Questions? <span className="text-slate-950 dark:text-white">Answered.</span>
+                        Questions? <span className="text-slate-950 dark:text-dark-200">Answered.</span>
                     </motion.h2>
                 </div>
 
@@ -49,18 +49,18 @@ const FAQ = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="border border-slate-200 dark:border-white/10 rounded-2xl bg-white dark:bg-white/5 overflow-hidden"
+                            className="border border-slate-200 dark:border-dark-700 rounded-2xl bg-white dark:bg-dark-800/60 overflow-hidden"
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                 className="w-full p-6 text-left flex justify-between items-center group"
                             >
-                                <span className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-slate-950 dark:group-hover:text-slate-200 transition-colors">
+                                <span className="text-lg font-bold text-slate-900 dark:text-dark-100 group-hover:text-slate-950 dark:group-hover:text-dark-200 transition-colors">
                                     {faq.question}
                                 </span>
                                 <motion.span
                                     animate={{ rotate: openIndex === index ? 180 : 0 }}
-                                    className="text-slate-900 dark:text-white"
+                                    className="text-slate-900 dark:text-dark-200"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -76,7 +76,7 @@ const FAQ = () => {
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                                     >
-                                        <div className="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-900 pt-4">
+                                        <div className="px-6 pb-6 text-slate-600 dark:text-dark-200 leading-relaxed border-t border-slate-100 dark:border-dark-700 pt-4">
                                             {faq.answer}
                                         </div>
                                     </motion.div>

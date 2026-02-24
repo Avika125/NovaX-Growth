@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ProcessHero = () => {
     return (
-        <section className="pt-32 pb-24 relative overflow-hidden bg-white dark:bg-black transition-colors duration-500">
+        <section className="pt-32 pb-24 relative overflow-hidden bg-white dark:bg-dark-900 transition-colors duration-500">
             {/* Animated Background */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <motion.div
@@ -47,7 +47,7 @@ const ProcessHero = () => {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="text-6xl md:text-8xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white leading-[1.05] mb-8"
+                            className="text-6xl md:text-8xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100 leading-[1.05] mb-8"
                         >
                             Outbound <br />
                             intelligence. <br />
@@ -61,11 +61,11 @@ const ProcessHero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="w-full max-w-md p-10 rounded-[40px] bg-slate-900 dark:bg-zinc-800 text-white shadow-2xl relative group"
+                            className="w-full max-w-md p-10 rounded-[40px] bg-dark-800 text-white shadow-2xl relative group"
                         >
                             <div className="absolute inset-0 bg-blue-600/10 rounded-[32px] blur-3xl group-hover:bg-blue-600/20 transition-all duration-700 -z-10" />
                             <h3 className="text-3xl font-['Playfair_Display'] mb-6">Workflow engine overview</h3>
-                            <p className="text-[13px] leading-relaxed text-slate-400 mb-10">
+                            <p className="text-[13px] leading-relaxed text-slate-400 dark:text-dark-200 mb-10">
                                 Leads are analyzed, gaps identified, and outreach triggered—every step is scored, prioritized, and controlled by you. Automation drives results, with clarity at every stage.
                             </p>
                             <button className="px-6 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-xs font-bold transition-all duration-300 backdrop-blur-sm">
@@ -83,7 +83,7 @@ const ProcessHero = () => {
                     alt="Team Background"
                     className="w-full h-full object-cover grayscale"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-black to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-dark-900 to-transparent" />
             </div>
         </section>
     );

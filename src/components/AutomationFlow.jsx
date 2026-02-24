@@ -30,14 +30,14 @@ const AutomationFlow = () => {
     ];
 
     return (
-        <section className="py-20 bg-slate-50 dark:bg-zinc-900/10 transition-colors duration-500">
+        <section className="py-20 bg-slate-50 dark:bg-dark-900 transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-6xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white mb-6"
+                        className="text-4xl md:text-6xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100 mb-6"
                     >
                         Outbound automation. <br />
                         Intelligent sales flow.
@@ -47,7 +47,7 @@ const AutomationFlow = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-[13px] leading-relaxed"
+                        className="text-slate-500 dark:text-dark-200 max-w-2xl mx-auto text-[13px] leading-relaxed"
                     >
                         Unlock advanced automation for lead analysis, outreach, and reply management. Streamline every stage of your sales process.
                     </motion.p>
@@ -61,23 +61,23 @@ const AutomationFlow = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.8 }}
-                            className="bg-white dark:bg-zinc-900/40 border border-slate-100 dark:border-white/5 rounded-[32px] overflow-hidden group hover:shadow-2xl transition-all duration-300"
+                            className="bg-white dark:bg-dark-800 border border-slate-100 dark:border-dark-700 rounded-[32px] overflow-hidden group hover:shadow-2xl transition-all duration-300"
                         >
                             <div className="p-8 pb-0 flex items-start gap-4">
-                                <div className="p-3 bg-slate-50 dark:bg-zinc-800 rounded-xl text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+                                <div className="p-3 bg-slate-50 dark:bg-dark-700 rounded-xl text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
                                     {feature.icon}
                                 </div>
                                 <div className="space-y-2">
-                                    <h3 className="text-xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white">
+                                    <h3 className="text-xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100">
                                         {feature.title}
                                     </h3>
-                                    <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed max-w-xs">
+                                    <p className="text-slate-500 dark:text-dark-200 text-xs leading-relaxed max-w-xs">
                                         {feature.desc}
                                     </p>
                                 </div>
                             </div>
                             <div className="mt-6 px-8 pb-8">
-                                <div className="aspect-[16/10] rounded-xl overflow-hidden shadow-xl ring-1 ring-slate-200/50 dark:ring-white/5">
+                                <div className="aspect-[16/10] rounded-xl overflow-hidden shadow-xl ring-1 ring-slate-200/50 dark:ring-dark-700">
                                     <img
                                         src={feature.image}
                                         alt={feature.title}

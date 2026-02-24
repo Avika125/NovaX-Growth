@@ -41,14 +41,14 @@ const Results = () => {
     ];
 
     return (
-        <section className="py-24 bg-[#F9F8F3] dark:bg-black transition-colors duration-300">
+        <section className="py-24 bg-[#F9F8F3] dark:bg-dark-900 transition-colors duration-300">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.3em] mb-4 block"
+                        className="text-xs font-bold text-slate-400 dark:text-dark-600 uppercase tracking-[0.3em] mb-4 block"
                     >
                         RELIED ON BY TOP PERFORMERS
                     </motion.span>
@@ -57,7 +57,7 @@ const Results = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-7xl font-serif text-slate-900 dark:text-white mb-6 leading-tight"
+                        className="text-5xl md:text-7xl font-serif text-slate-900 dark:text-dark-100 mb-6 leading-tight"
                     >
                         Automation that <br /> drives real results
                     </motion.h2>
@@ -67,7 +67,7 @@ const Results = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+                        className="text-lg text-slate-600 dark:text-dark-200 max-w-2xl mx-auto"
                     >
                         Discover how leading teams accelerate pipeline and close more deals with intelligent outbound automation.
                     </motion.p>
@@ -81,9 +81,9 @@ const Results = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white dark:bg-white/5 p-10 rounded-2xl border border-slate-100 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow duration-300"
+                            className="bg-white dark:bg-dark-800 p-10 rounded-2xl border border-slate-100 dark:border-dark-700 shadow-sm hover:shadow-md transition-shadow duration-300"
                         >
-                            <p className="text-2xl text-slate-800 dark:text-slate-200 mb-8 leading-snug font-medium">
+                            <p className="text-2xl text-slate-800 dark:text-dark-100 mb-8 leading-snug font-medium">
                                 "{item.quote}"
                             </p>
 
@@ -91,13 +91,13 @@ const Results = () => {
                                 <img
                                     src={item.avatar}
                                     alt={item.name}
-                                    className="w-12 h-12 rounded-full bg-slate-100 dark:bg-white/10"
+                                    className="w-12 h-12 rounded-full bg-slate-100 dark:bg-dark-700"
                                 />
                                 <div>
-                                    <h4 className="font-bold text-slate-950 dark:text-white text-sm">
+                                    <h4 className="font-bold text-slate-950 dark:text-dark-100 text-sm">
                                         {item.name}
                                     </h4>
-                                    <p className="text-slate-400 dark:text-slate-500 text-xs">
+                                    <p className="text-slate-400 dark:text-dark-600 text-xs">
                                         {item.role}
                                     </p>
                                 </div>

@@ -11,18 +11,18 @@ const IdealFor = () => {
     ];
 
     return (
-        <section className="py-24 bg-white dark:bg-black transition-colors duration-300">
+        <section className="py-24 bg-white dark:bg-dark-900 transition-colors duration-300">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-sm font-bold text-slate-800 dark:text-slate-300 uppercase tracking-widest mb-4"
+                        className="text-sm font-bold text-slate-800 dark:text-dark-200 uppercase tracking-widest mb-4"
                     >
                         💰 SECTION 9 — Ideal For
                     </motion.h2>
-                    <h3 className="text-4xl md:text-5xl font-black text-slate-950 dark:text-white">
+                    <h3 className="text-4xl md:text-5xl font-black text-slate-950 dark:text-dark-100">
                         Built for Growth-Obsessed Teams
                     </h3>
                 </div>
@@ -36,10 +36,10 @@ const IdealFor = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             whileHover={{ y: -5, backgroundColor: "rgba(0, 0, 0, 0.05)" }}
-                            className="p-8 rounded-3xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 flex flex-col items-center text-center transition-all"
+                            className="p-8 rounded-3xl bg-slate-50 dark:bg-dark-800 border border-slate-100 dark:border-dark-700 flex flex-col items-center text-center transition-all"
                         >
                             <span className="text-4xl mb-4">{item.icon}</span>
-                            <h4 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
+                            <h4 className="text-lg font-bold text-slate-900 dark:text-dark-100 leading-tight">
                                 {item.title}
                             </h4>
                         </motion.div>

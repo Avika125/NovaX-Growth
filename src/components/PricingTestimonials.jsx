@@ -42,14 +42,14 @@ const PricingTestimonials = () => {
     ];
 
     return (
-        <section className="py-24 bg-white dark:bg-black transition-colors duration-500">
+        <section className="py-24 bg-white dark:bg-dark-900 transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-6xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white mb-12"
+                        className="text-4xl md:text-6xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100 mb-12"
                     >
                         Automation that <br /> drives real outcomes
                     </motion.h2>
@@ -62,9 +62,9 @@ const PricingTestimonials = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1, duration: 0.8 }}
-                                className="p-10 rounded-[32px] bg-[#FDFCF9] dark:bg-zinc-900/40 border border-slate-100 dark:border-white/5 text-left flex flex-col justify-between group hover:shadow-xl transition-all duration-500"
+                                className="p-10 rounded-[32px] bg-[#FDFCF9] dark:bg-dark-800/40 border border-slate-100 dark:border-dark-700 text-left flex flex-col justify-between group hover:shadow-xl transition-all duration-500"
                             >
-                                <p className="text-lg text-slate-900 dark:text-white font-['Playfair_Display'] italic mb-10 leading-snug">
+                                <p className="text-lg text-slate-900 dark:text-dark-100 font-['Playfair_Display'] italic mb-10 leading-snug">
                                     "{item.quote}"
                                 </p>
                                 <div className="flex items-center gap-4">
@@ -72,10 +72,10 @@ const PricingTestimonials = () => {
                                         <img src={item.image} alt={item.author} className="w-full h-full object-cover" />
                                     </div>
                                     <div>
-                                        <h4 className="text-xs font-bold text-slate-900 dark:text-white mb-0.5">
+                                        <h4 className="text-xs font-bold text-slate-900 dark:text-dark-100 mb-0.5">
                                             {item.author}
                                         </h4>
-                                        <p className="text-[10px] text-slate-400 dark:text-zinc-500 uppercase tracking-wider font-bold">
+                                        <p className="text-[10px] text-slate-400 dark:text-dark-600 uppercase tracking-wider font-bold">
                                             {item.role}
                                         </p>
                                     </div>

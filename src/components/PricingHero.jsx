@@ -30,14 +30,14 @@ const PricingHero = () => {
     ];
 
     return (
-        <section className="pt-32 pb-20 overflow-hidden bg-white dark:bg-black transition-colors duration-500">
+        <section className="pt-32 pb-20 overflow-hidden bg-white dark:bg-dark-900 transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="text-[9px] font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-[0.4em] block mb-6"
+                        className="text-[9px] font-bold text-slate-400 dark:text-dark-600 uppercase tracking-[0.4em] block mb-6"
                     >
                         PLANS & PRICING
                     </motion.span>
@@ -45,7 +45,7 @@ const PricingHero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-7xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white leading-[1.1] mb-6"
+                        className="text-5xl md:text-7xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100 leading-[1.1] mb-6"
                     >
                         Automate sales. <br />
                         Accelerate growth.
@@ -55,7 +55,7 @@ const PricingHero = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-[13px] leading-relaxed"
+                        className="text-slate-500 dark:text-dark-200 max-w-2xl mx-auto text-[13px] leading-relaxed"
                     >
                         Flexible automation plans for every sales team. Choose the right fit and scale your outbound intelligence.
                     </motion.p>
@@ -70,11 +70,11 @@ const PricingHero = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.8 }}
                             className={`p-10 rounded-[32px] flex flex-col items-center text-center transition-all duration-500 ${plan.highlight
-                                    ? 'bg-[#FDFCF9] dark:bg-white text-slate-900 ring-1 ring-slate-200 dark:ring-white/10 shadow-2xl'
-                                    : 'bg-slate-50 dark:bg-zinc-900/50 text-slate-900 dark:text-white border border-slate-100 dark:border-white/5'
+                                ? 'bg-[#FDFCF9] dark:bg-dark-100 text-slate-900 ring-1 ring-slate-200 dark:ring-dark-700 shadow-2xl'
+                                : 'bg-slate-50 dark:bg-dark-800 text-slate-900 dark:text-dark-100 border border-slate-100 dark:border-dark-700'
                                 }`}
                         >
-                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-slate-400 dark:text-zinc-500">
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-slate-400 dark:text-dark-600">
                                 {plan.name}
                             </span>
                             <div className="mb-2">
@@ -82,18 +82,18 @@ const PricingHero = () => {
                                     {plan.price}
                                 </span>
                             </div>
-                            <p className={`text-[11px] mb-12 ${plan.highlight ? 'text-slate-500' : 'text-slate-500 dark:text-slate-400'}`}>
+                            <p className={`text-[11px] mb-12 ${plan.highlight ? 'text-slate-500' : 'text-slate-500 dark:text-dark-200'}`}>
                                 {plan.description}
                             </p>
 
                             <button className={`w-32 py-3 rounded-xl text-sm font-bold mb-8 transition-all duration-300 ${plan.highlight
-                                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 hover:bg-blue-700'
-                                    : 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 hover:bg-blue-700'
+                                ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 hover:bg-blue-700'
+                                : 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 hover:bg-blue-700'
                                 }`}>
                                 {plan.cta}
                             </button>
 
-                            <p className="text-[10px] text-slate-400 dark:text-zinc-500">
+                            <p className="text-[10px] text-slate-400 dark:text-dark-600">
                                 {plan.notes}
                             </p>
                         </motion.div>

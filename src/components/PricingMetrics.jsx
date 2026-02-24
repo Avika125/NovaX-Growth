@@ -18,14 +18,14 @@ const PricingMetrics = () => {
     ];
 
     return (
-        <section className="py-24 bg-[#FDFCF9] dark:bg-zinc-900/10 transition-colors duration-500">
+        <section className="py-24 bg-[#FDFCF9] dark:bg-dark-900/40 transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-6xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white mb-4"
+                        className="text-4xl md:text-6xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100 mb-4"
                     >
                         Metrics that prove <br /> performance
                     </motion.h2>
@@ -34,7 +34,7 @@ const PricingMetrics = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-widest"
+                        className="text-slate-500 dark:text-dark-200 text-[10px] font-bold uppercase tracking-widest"
                     >
                         Track automation impact with real results.
                     </motion.p>
@@ -50,10 +50,10 @@ const PricingMetrics = () => {
                             transition={{ delay: index * 0.1, duration: 0.8 }}
                             className="text-center space-y-4"
                         >
-                            <span className="text-4xl md:text-6xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white block">
+                            <span className="text-4xl md:text-6xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100 block">
                                 {metric.value}
                             </span>
-                            <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider max-w-[160px] mx-auto leading-relaxed">
+                            <p className="text-[10px] text-slate-500 dark:text-dark-200 font-bold uppercase tracking-wider max-w-[160px] mx-auto leading-relaxed">
                                 {metric.label}
                             </p>
                         </motion.div>

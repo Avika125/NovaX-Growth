@@ -2,18 +2,18 @@ import { motion } from 'framer-motion';
 
 const Differentiation = () => {
     return (
-        <section className="py-24 bg-slate-50 dark:bg-black transition-colors duration-300">
+        <section className="py-24 bg-slate-50 dark:bg-dark-900 transition-colors duration-300">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-sm font-bold text-slate-800 dark:text-slate-300 uppercase tracking-widest mb-4"
+                        className="text-sm font-bold text-slate-800 dark:text-dark-200 uppercase tracking-widest mb-4"
                     >
                         📈 SECTION 6 — Why We’re Different
                     </motion.h2>
-                    <h3 className="text-4xl md:text-5xl font-black text-slate-950 dark:text-white mb-6">
+                    <h3 className="text-4xl md:text-5xl font-black text-slate-950 dark:text-dark-100 mb-6">
                         Compare The Difference
                     </h3>
                 </div>
@@ -24,7 +24,7 @@ const Differentiation = () => {
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="p-8 rounded-3xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm"
+                        className="p-8 rounded-3xl bg-white dark:bg-dark-800/40 border border-slate-200 dark:border-dark-700 shadow-sm"
                     >
                         <h4 className="text-2xl font-bold text-slate-400 mb-8 flex items-center gap-3">
                             Most tools are:
@@ -49,12 +49,12 @@ const Differentiation = () => {
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="p-8 rounded-3xl bg-slate-100 dark:bg-white/5 border-2 border-slate-950 dark:border-white shadow-xl shadow-black/10 relative overflow-hidden"
+                        className="p-8 rounded-3xl bg-slate-100 dark:bg-dark-800 border-2 border-slate-950 dark:border-dark-100 shadow-xl shadow-black/10 relative overflow-hidden"
                     >
                         <div className="absolute top-0 right-0 p-4">
-                            <span className="bg-slate-950 dark:bg-white text-white dark:text-slate-950 text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-tighter">Recommended</span>
+                            <span className="bg-slate-950 dark:bg-dark-100 text-white dark:text-slate-950 text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-tighter">Recommended</span>
                         </div>
-                        <h4 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+                        <h4 className="text-2xl font-bold text-slate-900 dark:text-dark-100 mb-8 flex items-center gap-3">
                             We are:
                         </h4>
                         <ul className="space-y-6">
@@ -65,7 +65,7 @@ const Differentiation = () => {
                                 "Fully automated",
                                 "Human-in-the-loop controlled"
                             ].map((item, i) => (
-                                <li key={i} className="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+                                <li key={i} className="flex items-center gap-4 text-slate-900 dark:text-dark-100">
                                     <span className="text-green-500 font-bold">✅</span>
                                     <span className="text-lg font-bold">{item}</span>
                                 </li>

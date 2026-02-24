@@ -11,9 +11,9 @@ const AboutHero = () => {
     ];
 
     return (
-        <section className="relative pt-32 pb-16 overflow-hidden bg-white dark:bg-black transition-colors duration-500">
+        <section className="relative pt-32 pb-16 overflow-hidden bg-white dark:bg-dark-900 transition-colors duration-500">
             {/* Background elements */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 dark:bg-zinc-900/10 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 dark:bg-dark-800/20 pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
@@ -24,7 +24,7 @@ const AboutHero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <h1 className="text-5xl md:text-7xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white leading-[1.1] mb-8">
+                            <h1 className="text-5xl md:text-7xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100 leading-[1.1] mb-8">
                                 <span className="block dark:hidden">
                                     Outbound intelligence.<br />
                                     Automated.<br />
@@ -37,7 +37,7 @@ const AboutHero = () => {
                                 </span>
                             </h1>
 
-                            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed mb-8">
+                            <p className="text-lg text-slate-600 dark:text-dark-200 max-w-xl leading-relaxed mb-8">
                                 <span className="block dark:hidden">
                                     We engineer every workflow for accuracy, speed, and measurable growth. See how our automation keeps you in control.
                                 </span>
@@ -71,16 +71,16 @@ const AboutHero = () => {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="space-y-3 text-left lg:text-right"
                         >
-                            <span className="text-[9px] font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-[0.3em] block mb-6">
+                            <span className="text-[9px] font-bold text-slate-400 dark:text-dark-600 uppercase tracking-[0.3em] block mb-6">
                                 CORE CAPABILITIES
                             </span>
 
                             {coreCapabilities.map((capability, index) => (
                                 <div
                                     key={index}
-                                    className="px-3 py-1.5 bg-slate-100 dark:bg-zinc-900/60 border border-slate-200 dark:border-white/5 rounded-lg inline-block lg:block"
+                                    className="px-3 py-1.5 bg-slate-100 dark:bg-dark-800/60 border border-slate-200 dark:border-dark-700 rounded-lg inline-block lg:block"
                                 >
-                                    <span className="text-[10px] font-bold text-slate-700 dark:text-slate-300 tracking-[0.1em]">
+                                    <span className="text-[10px] font-bold text-slate-700 dark:text-dark-200 tracking-[0.1em]">
                                         {capability}
                                     </span>
                                 </div>

@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white dark:bg-black transition-colors duration-500 pt-20">
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-palette-100 dark:bg-palette-900 transition-colors duration-500 pt-20">
             {/* Ambient Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-slate-200/50 dark:bg-white/5 rounded-full blur-[120px] animate-pulse" />
-                <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-slate-100/30 dark:bg-white/[0.02] rounded-full blur-[100px]" />
+                <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-palette-200/50 dark:bg-palette-700/20 rounded-full blur-[120px] animate-pulse" />
+                <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-palette-100/30 dark:bg-palette-800/20 rounded-full blur-[100px]" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
@@ -37,7 +37,7 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.8, duration: 1 }}
-                            className="text-lg md:text-xl font-medium text-slate-500 dark:text-slate-400 mt-8 tracking-tight max-w-2xl mx-auto"
+                            className="text-lg md:text-xl font-medium text-palette-800 dark:text-palette-200 mt-8 tracking-tight max-w-2xl mx-auto"
                         >
                             Precision outbound infrastructure. <br className="hidden md:block" /> Powered by advanced AI intelligence.
                         </motion.p>
@@ -52,7 +52,7 @@ const Hero = () => {
                 transition={{ delay: 2, duration: 1 }}
                 className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center z-20"
             >
-                <div className="w-6 h-10 border-2 border-slate-900/10 dark:border-white/20 rounded-full relative flex justify-center p-1 bg-white/5 backdrop-blur-sm">
+                <div className="w-6 h-10 border-2 border-slate-900/10 dark:border-dark-600/40 rounded-full relative flex justify-center p-1 bg-white/5 backdrop-blur-sm">
                     <motion.div
                         animate={{
                             y: [0, 16, 0],
@@ -63,7 +63,7 @@ const Hero = () => {
                             repeat: Infinity,
                             ease: "easeInOut"
                         }}
-                        className="w-1.5 h-1.5 bg-slate-900 dark:bg-white rounded-full shadow-sm"
+                        className="w-1.5 h-1.5 bg-palette-900 dark:bg-palette-200 rounded-full shadow-sm"
                     />
                 </div>
             </motion.div>

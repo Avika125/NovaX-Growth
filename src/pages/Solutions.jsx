@@ -14,7 +14,7 @@ const Solutions = () => {
     }, []);
 
     return (
-        <main className="min-h-screen bg-white dark:bg-black transition-colors duration-500">
+        <main className="min-h-screen bg-white dark:bg-dark-900 transition-colors duration-500">
             <Navbar />
             <motion.div
                 initial={{ opacity: 0 }}

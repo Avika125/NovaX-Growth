@@ -16,14 +16,14 @@ const IntelligenceAction = () => {
     ];
 
     return (
-        <section className="py-20 bg-white dark:bg-black transition-colors duration-500">
+        <section className="py-20 bg-white dark:bg-dark-900 transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="text-[9px] font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-[0.4em] block mb-6"
+                        className="text-[9px] font-bold text-slate-400 dark:text-dark-600 uppercase tracking-[0.4em] block mb-6"
                     >
                         CURATED INSIGHTS FOR EVERY ROLE
                     </motion.span>
@@ -31,7 +31,7 @@ const IntelligenceAction = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-5xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white mb-6"
+                        className="text-3xl md:text-5xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100 mb-6"
                     >
                         Intelligence that <br /> drives action
                     </motion.h2>
@@ -47,7 +47,7 @@ const IntelligenceAction = () => {
                             transition={{ delay: index * 0.1, duration: 0.8 }}
                             className="space-y-4"
                         >
-                            <div className="aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-200/50 dark:ring-white/5">
+                            <div className="aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-200/50 dark:ring-dark-700">
                                 <img
                                     src={role.image}
                                     alt={role.title}
@@ -55,10 +55,10 @@ const IntelligenceAction = () => {
                                 />
                             </div>
                             <div className="space-y-2 px-2">
-                                <h3 className="text-xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white">
+                                <h3 className="text-xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100">
                                     {role.title}
                                 </h3>
-                                <p className="text-slate-500 dark:text-slate-400 text-xs tracking-tight">
+                                <p className="text-slate-500 dark:text-dark-200 text-xs tracking-tight">
                                     {role.desc}
                                 </p>
                             </div>

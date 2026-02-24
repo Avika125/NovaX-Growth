@@ -22,13 +22,13 @@ const AboutMetrics = () => {
     ];
 
     return (
-        <section className="py-24 bg-slate-50 dark:bg-zinc-900/10 transition-colors duration-500">
+        <section className="py-24 bg-slate-50 dark:bg-dark-900 transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-6xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-white text-center mb-16"
+                    className="text-4xl md:text-6xl font-['Playfair_Display'] font-medium text-slate-900 dark:text-dark-100 text-center mb-16"
                 >
                     Metrics that <br /> drive real results
                 </motion.h2>
@@ -42,20 +42,20 @@ const AboutMetrics = () => {
                         transition={{ duration: 0.8 }}
                         className="lg:w-1/2 relative group"
                     >
-                        <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-slate-200 dark:shadow-black/50">
+                        <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-slate-200 dark:shadow-dark-900/50">
                             {/* Placeholder for the team/meeting image from Image 3 */}
-                            <div className="w-full h-full bg-slate-200 dark:bg-zinc-800 flex items-center justify-center">
-                                <span className="text-slate-400 dark:text-zinc-700 text-6xl italic">NovaX Team</span>
+                            <div className="w-full h-full bg-slate-200 dark:bg-dark-800 flex items-center justify-center">
+                                <span className="text-slate-400 dark:text-dark-600 text-6xl italic">NovaX Team</span>
                             </div>
                         </div>
 
                         {/* Overlapping Stats Card (Visual Flair) */}
-                        <div className="absolute -bottom-8 -right-8 hidden md:block w-56 p-6 bg-white dark:bg-zinc-900 rounded-2xl shadow-xl border border-slate-100 dark:border-white/5 transition-colors duration-500">
-                            <span className="block text-3xl font-light text-slate-900 dark:text-white mb-2 tracking-tight">40%</span>
-                            <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-widest font-bold">Inc. conversion</span>
+                        <div className="absolute -bottom-8 -right-8 hidden md:block w-56 p-6 bg-white dark:bg-dark-800 rounded-2xl shadow-xl border border-slate-100 dark:border-dark-700 transition-colors duration-500">
+                            <span className="block text-3xl font-light text-slate-900 dark:text-dark-100 mb-2 tracking-tight">40%</span>
+                            <span className="text-[10px] text-slate-500 dark:text-dark-200 uppercase tracking-widest font-bold">Inc. conversion</span>
                         </div>
-                        <div className="absolute -top-8 -left-8 hidden md:block w-56 p-6 bg-white dark:bg-zinc-900 rounded-2xl shadow-xl border border-slate-100 dark:border-white/5 transition-colors duration-500">
-                            <span className="block text-3xl font-light text-slate-900 dark:text-white mb-2 tracking-tight">100%</span>
+                        <div className="absolute -top-8 -left-8 hidden md:block w-56 p-6 bg-white dark:bg-dark-800 rounded-2xl shadow-xl border border-slate-100 dark:border-dark-700 transition-colors duration-500">
+                            <span className="block text-3xl font-light text-slate-900 dark:text-dark-100 mb-2 tracking-tight">100%</span>
                             <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-widest font-bold">Human Oversight</span>
                         </div>
                     </motion.div>
@@ -71,10 +71,10 @@ const AboutMetrics = () => {
                                 transition={{ delay: index * 0.1, duration: 0.8 }}
                                 className="flex flex-col items-center lg:items-start text-center lg:text-left"
                             >
-                                <span className="text-5xl md:text-7xl font-light text-slate-900 dark:text-white mb-3 tracking-tighter">
+                                <span className="text-5xl md:text-7xl font-light text-slate-900 dark:text-dark-100 mb-3 tracking-tighter">
                                     {stat.value}
                                 </span>
-                                <p className="text-[11px] text-slate-500 dark:text-slate-400 uppercase tracking-[0.2em] font-bold leading-relaxed max-w-[180px]">
+                                <p className="text-[11px] text-slate-500 dark:text-dark-200 uppercase tracking-[0.2em] font-bold leading-relaxed max-w-[180px]">
                                     {stat.label}
                                 </p>
                             </motion.div>
