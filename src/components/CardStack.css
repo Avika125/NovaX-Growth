@@ -1,0 +1,96 @@
+.stack-main {
+    position: relative;
+    padding-top: 5vh;
+}
+
+.cards-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20vh;
+}
+
+.card-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.stacked-card {
+    height: 500px;
+    width: 1000px;
+    border-radius: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    color: white;
+    transform-origin: top;
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 1024px) {
+    .stacked-card {
+        width: 90%;
+        height: 600px;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .stacked-card {
+        height: 70vh;
+        border-radius: 30px;
+        padding: 30px;
+    }
+}
+
+.card-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 2;
+}
+
+.card-emoji {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 80px;
+    opacity: 0.8;
+}
+
+@media (max-width: 640px) {
+    .card-emoji {
+        font-size: 50px;
+    }
+}
+
+.card-text {
+    width: 100%;
+}
+
+.stacked-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 60%);
+    border-radius: inherit;
+    z-index: 1;
+}
+
+.card-link {
+    z-index: 2;
+    position: relative;
+}

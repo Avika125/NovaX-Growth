@@ -1,0 +1,190 @@
+.hand-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 100px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.hand {
+    display: inline-grid;
+    gap: 0;
+    min-height: 300px;
+    padding: 30px;
+    transition: 400ms ease-in-out;
+}
+
+@media (min-width: 576px) {
+    .hand {
+        grid-template-columns: repeat(4, 0);
+    }
+}
+
+@media (max-width: 575px) {
+    .hand {
+        grid-template-rows: repeat(4, 0);
+        grid-template-columns: 1fr;
+    }
+}
+
+.hand:hover {
+    gap: 5vmin;
+}
+
+@media (min-width: 576px) {
+    .hand:hover {
+        grid-template-columns: repeat(4, 42vmin);
+        gap: 5vmin;
+    }
+}
+
+@media (max-width: 575px) {
+    .hand:hover {
+        grid-template-rows: repeat(4, 75vmin);
+        gap: 8vmin;
+    }
+}
+
+.hand:hover .fan-card-wrap {
+    transform: translateX(-50%) rotate(0);
+}
+
+.hand:hover .fan-card:hover .fan-card-wrap {
+    transform: translateX(-50%) rotate(0) translateY(-15%);
+}
+
+@media (max-width: 575px) {
+    .hand:hover .fan-card:hover .fan-card-wrap {
+        transform: translateX(-50%) rotate(0) translateY(-5%);
+    }
+}
+
+.fan-card {
+    position: relative;
+}
+
+.fan-card-wrap {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    gap: 1vmin;
+    position: relative;
+    top: 0;
+    left: 50%;
+    padding: 3vmin;
+    border-radius: 3.5vmin;
+    width: 50vmin;
+    height: 42vmin;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transform: translateX(-50%) rotate(calc((var(--i) * 15deg) - 22.5deg));
+    /* Adjusted for 4 cards */
+    background-color: var(--color-800);
+    border: 1px solid var(--border-default);
+    transition: 350ms ease-in-out;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 575px) {
+    .fan-card-wrap {
+        width: 60vmin;
+        height: 75vmin;
+        padding: 4vmin;
+        border-radius: 4vmin;
+        transform: translateX(-50%) rotate(calc((var(--i) * 10deg) - 15deg));
+    }
+}
+
+.fan-card-wrap::before {
+    content: "";
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 20vmin;
+}
+
+.fan-card h3,
+.fan-card .feature-desc {
+    position: relative;
+    z-index: 5;
+    transition: .25s;
+    color: var(--color-100);
+}
+
+@media (max-width: 575px) {
+
+    .fan-card h3,
+    .fan-card .feature-desc {
+        text-align: center;
+    }
+}
+
+.fan-card h3 {
+    font-size: 2.8vmin;
+    font-weight: 700;
+    margin-bottom: 0.8vmin;
+}
+
+@media (max-width: 575px) {
+    .fan-card h3 {
+        font-size: 5vmin;
+    }
+}
+
+.fan-card .feature-desc {
+    font-size: 1.8vmin;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+@media (max-width: 575px) {
+    .fan-card .feature-desc {
+        font-size: 3.5vmin;
+        margin-top: 1vmin;
+    }
+}
+
+.fan-card-link {
+    position: relative;
+    z-index: 5;
+    color: var(--color-100);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 2px;
+    width: fit-content;
+    margin-top: 1vmin;
+}
+
+@media (max-width: 575px) {
+    .fan-card-link {
+        font-size: 3vmin !important;
+        margin: 2vmin auto 0;
+    }
+}
+
+.fan-card-emoji {
+    position: absolute;
+    top: 2vmin;
+    right: 2vmin;
+    font-size: 4vmin;
+    z-index: 5;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+@media (max-width: 575px) {
+    .fan-card-emoji {
+        font-size: 10vmin;
+        top: 4vmin;
+        right: 4vmin;
+    }
+}
