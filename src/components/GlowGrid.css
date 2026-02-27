@@ -1,0 +1,40 @@
+.glow-grid-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.glow-grid {
+    position: absolute;
+    inset: -100%;
+    width: 300%;
+    height: 300%;
+    background-image:
+        linear-gradient(to right, rgba(20, 184, 166, 0.45) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(20, 184, 166, 0.45) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(circle at 50% 50%, black, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black, transparent 70%);
+    animation: grid-pulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes grid-pulse {
+    0% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* Dark mode overrides for even more subtlety */
+.dark .glow-grid {
+    background-image:
+        linear-gradient(to right, rgba(45, 212, 191, 0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(45, 212, 191, 0.2) 1px, transparent 1px);
+}

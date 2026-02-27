@@ -11,3 +11,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </ThemeProvider>
     </React.StrictMode>,
 )
+
+
+
+
+// make section 5 page more realstic and more attractive make like 3d structure and it look good in webstite creative and beautiful also you can use animation and color should be according to the website for light and dark mode both

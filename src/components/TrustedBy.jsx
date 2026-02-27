@@ -3,14 +3,15 @@ import { useRef, useEffect, useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 const brands = [
-    { name: "LOGO", icon: "©️" },
-    { name: "EGGS", icon: "🥚" },
-    { name: "THE PAAK", icon: "📦" },
-    { name: "IDEA", icon: "🔲" },
-    { name: "ECHOES", icon: "〰️" },
-    { name: "CORE", icon: "⭕" },
-    { name: "FLUX", icon: "🏹" },
+    { name: "Snowflake", logo: "https://cdn.simpleicons.org/snowflake/29B5E8" },
+    { name: "Databricks", logo: "https://cdn.simpleicons.org/databricks/FF3621" },
+    { name: "Stripe", logo: "https://cdn.simpleicons.org/stripe/008CDD" },
+    { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb/47A248" },
+    { name: "Retool", logo: "https://cdn.simpleicons.org/retool/3D3D3D" },
+    { name: "Airtable", logo: "https://cdn.simpleicons.org/airtable/18BFFF" },
+    { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel/000000" },
 ];
+
 
 const TrustedBy = () => {
     const { theme } = useTheme();
@@ -251,17 +252,22 @@ const LogoCard = ({ brand, theme }) => {
             {/* Soft Glow Shadow on Hover */}
             <div className="absolute inset-0 bg-palette-600/0 group-hover:bg-palette-600/20 blur-2xl transition-all duration-500 rounded-2xl" />
 
-            <div className="relative flex items-center gap-4 p-6 rounded-2xl bg-palette-100/50 dark:bg-palette-800/40 border border-palette-200/50 dark:border-palette-700/50 glass-morphism backdrop-blur-sm group-hover:border-palette-600/50 transition-all duration-300 z-10 overflow-hidden">
+            <div className="relative flex flex-col items-center gap-3 p-6 rounded-2xl bg-palette-100/50 dark:bg-palette-800/40 border border-palette-200/50 dark:border-palette-700/50 glass-morphism backdrop-blur-sm group-hover:border-palette-600/50 transition-all duration-300 z-10 overflow-hidden">
                 {/* Reflective shine effect */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/0 to-white/0 group-hover:via-white/5 dark:group-hover:via-white/10 transition-all duration-700" />
 
-                <motion.span
-                    whileHover={{ rotate: 12 }}
-                    className="text-3xl grayscale group-hover:grayscale-0 transition-all duration-300"
-                >
-                    {brand.icon}
-                </motion.span>
-                <span className="font-bold text-palette-900 dark:text-palette-100 tracking-widest text-lg">
+                <div className="w-12 h-12 flex items-center justify-center">
+                    <img
+                        src={brand.logo}
+                        alt={brand.name}
+                        className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500 opacity-60 group-hover:opacity-100"
+                        onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = `https://ui-avatars.com/api/?name=${brand.name}&background=random&color=fff&size=128&bold=true`;
+                        }}
+                    />
+                </div>
+                <span className="font-bold text-palette-900 dark:text-palette-100 tracking-widest text-xs uppercase opacity-40 group-hover:opacity-100 transition-opacity">
                     {brand.name}
                 </span>
 
@@ -275,5 +281,6 @@ const LogoCard = ({ brand, theme }) => {
         </motion.div>
     );
 };
+
 
 export default TrustedBy;

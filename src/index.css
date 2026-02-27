@@ -16,10 +16,10 @@
     --color-100: #FBE4D8;
 
     /* Light Theme (Default) */
-    --bg-page: var(--color-100);
-    /* #FBE4D8 — Background */
-    --bg-surface: var(--color-200);
-    /* #DFB6B2 — Surface */
+    --bg-page: #F2D1BF;
+    /* #FBE4D8 — Background (Darkened) */
+    --bg-surface: #D4A29D;
+    /* #DFB6B2 — Surface (Darkened) */
     --text-primary: var(--color-900);
     /* #190019 — Primary Text */
     --text-secondary: var(--color-800);

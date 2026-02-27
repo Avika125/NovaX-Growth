@@ -4,7 +4,7 @@ import OutboundIntelligence from '../components/OutboundIntelligence';
 import Stats from '../components/Stats';
 import Results from '../components/Results';
 import Lifecycle from '../components/Lifecycle';
-import WallOfLove from '../components/WallOfLove';
+
 import Integrations from '../components/Integrations';
 import FAQ from '../components/FAQ';
 import FinalCTA from '../components/FinalCTA';
@@ -21,7 +21,7 @@ const Home = () => {
             <Results />
             <Integrations />
             <Lifecycle />
-            <WallOfLove />
+
             <FAQ />
             <FinalCTA />
         </Layout>

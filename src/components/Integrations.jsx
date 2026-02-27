@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
 
 const integrations = [
-    { name: "Salesforce", color: "bg-slate-800" },
-    { name: "HubSpot", color: "bg-zinc-800" },
-    { name: "Pipedrive", color: "bg-slate-700" },
-    { name: "Slack", color: "bg-zinc-700" },
-    { name: "Zapier", color: "bg-slate-600" },
-    { name: "LinkedIn", color: "bg-zinc-900" },
-    { name: "Apollo", color: "bg-slate-900" },
-    { name: "Outlook", color: "bg-zinc-600" },
-    { name: "Gmail", color: "bg-red-500" },
-    { name: "Clay", color: "bg-slate-900" }
+    { name: "Salesforce", logo: "https://cdn.simpleicons.org/salesforce/00A1E0" },
+    { name: "HubSpot", logo: "https://cdn.simpleicons.org/hubspot/FF7A59" },
+    { name: "Pipedrive", logo: "https://cdn.simpleicons.org/pipedrive/3747A6" },
+    { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
+    { name: "Zapier", logo: "https://cdn.simpleicons.org/zapier/FF6600" },
+    { name: "LinkedIn", logo: "https://cdn.simpleicons.org/linkedin/0A66C2" },
+    { name: "Apollo", logo: "https://logo.clearbit.com/apollo.io" },
+    { name: "Outlook", logo: "https://cdn.simpleicons.org/microsoftoutlook/0078D4" },
+    { name: "Gmail", logo: "https://cdn.simpleicons.org/gmail/EA4335" },
+    { name: "Clay", logo: "https://logo.clearbit.com/clay.com" }
 ];
 
 const Integrations = () => {
@@ -19,41 +19,72 @@ const Integrations = () => {
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <motion.h2
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        className="text-2xl font-display font-bold text-slate-400 dark:text-dark-600 uppercase tracking-widest mb-12"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-2xl font-display font-bold text-slate-500 dark:text-dark-600 uppercase tracking-[0.2em] mb-12"
                     >
                         Plays well with <span className="text-slate-900 dark:text-dark-100">Everything.</span>
                     </motion.h2>
 
-                    <div className="flex flex-wrap justify-center gap-6 md:gap-12 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <div className="flex flex-wrap justify-center gap-6 md:gap-10">
                         {integrations.map((item, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.05 }}
-                                className="flex flex-col items-center space-y-2"
+                                transition={{
+                                    delay: index * 0.05,
+                                    type: "spring",
+                                    stiffness: 100
+                                }}
+                                whileHover={{ y: -5, scale: 1.05 }}
+                                className="flex flex-col items-center group cursor-pointer"
                             >
-                                <div className={`w-16 h-16 rounded-xl ${item.color} flex items-center justify-center text-white font-black text-xl shadow-lg`}>
-                                    {item.name[0]}
+                                <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-slate-50 dark:bg-dark-800/80 border border-slate-200 dark:border-dark-700 flex items-center justify-center p-4 shadow-sm group-hover:shadow-xl group-hover:border-slate-300 dark:group-hover:border-dark-600 transition-all duration-300 relative overflow-hidden backdrop-blur-sm">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent dark:from-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    <img
+                                        src={item.logo}
+                                        alt={item.name}
+                                        className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = `https://ui-avatars.com/api/?name=${item.name}&background=random&color=fff&size=128&bold=true`;
+                                        }}
+                                    />
                                 </div>
-                                <span className="text-sm font-bold text-slate-900 dark:text-dark-200">{item.name}</span>
+                                <span className="mt-3 text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-dark-600 group-hover:text-slate-900 dark:group-hover:text-dark-200 transition-colors">
+                                    {item.name}
+                                </span>
                             </motion.div>
                         ))}
                     </div>
                 </div>
 
-                <div className="max-w-4xl mx-auto p-12 rounded-3xl bg-slate-950 dark:bg-dark-800 border border-slate-900 dark:border-dark-700 text-center">
-                    <p className="text-xl text-slate-600 dark:text-dark-200 leading-relaxed italic">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="max-w-4xl mx-auto p-8 md:p-12 rounded-[2.5rem] bg-slate-50 dark:bg-dark-800/40 border border-slate-200 dark:border-dark-700/50 text-center relative overflow-hidden"
+                >
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-slate-200 dark:via-dark-600 to-transparent opacity-50" />
+
+                    <p className="text-xl md:text-2xl text-slate-700 dark:text-dark-200 leading-relaxed font-medium italic">
                         "novaxgrowth seamlessly embedded into our existing tech stack. Within 24 hours, our CRM was populated with enriched leads and personalized sequence drafts ready to go."
                     </p>
-                    <div className="mt-6 font-bold text-slate-900 dark:text-dark-100">— CTO, Series B Fintech</div>
-                </div>
+                    <div className="mt-8 flex items-center justify-center space-x-4">
+                        <div className="h-px w-8 bg-slate-300 dark:bg-dark-600" />
+                        <div className="font-display font-bold text-sm tracking-widest text-slate-900 dark:text-dark-100 uppercase">
+                            CTO, Series B Fintech
+                        </div>
+                        <div className="h-px w-8 bg-slate-300 dark:bg-dark-600" />
+                    </div>
+                </motion.div>
             </div>
         </section>
     );
 };
+
 
 export default Integrations;

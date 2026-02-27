@@ -9,8 +9,8 @@ const TiltCard = ({ item, index }) => {
     const mouseSpringX = useSpring(x);
     const mouseSpringY = useSpring(y);
 
-    const rotateX = useTransform(mouseSpringY, [-0.5, 0.5], ["10deg", "-10deg"]);
-    const rotateY = useTransform(mouseSpringX, [-0.5, 0.5], ["-10deg", "10deg"]);
+    const rotateX = useTransform(mouseSpringY, [-0.5, 0.5], ["15deg", "-15deg"]);
+    const rotateY = useTransform(mouseSpringX, [-0.5, 0.5], ["-15deg", "15deg"]);
 
     const handleMouseMove = (e) => {
         if (!cardRef.current) return;
@@ -35,37 +35,59 @@ const TiltCard = ({ item, index }) => {
             ref={cardRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            style={{
+                rotateX,
+                rotateY,
+                transformStyle: "preserve-3d"
+            }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{
+                opacity: 1,
+                scale: 1,
+                y: [0, -15, 0] // Floating motion
+            }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="bg-white dark:bg-dark-800 p-10 rounded-2xl border border-palette-700/10 dark:border-dark-700 shadow-sm hover:shadow-xl transition-shadow duration-500 perspective-1000 group"
+            transition={{
+                delay: index * 0.1,
+                duration: 0.8,
+                ease: [0.16, 1, 0.3, 1],
+                y: {
+                    duration: 4 + index * 0.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.2
+                }
+            }}
+            className="relative bg-white/70 dark:bg-palette-800/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-palette-700/5 dark:border-white/5 shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:shadow-2xl transition-all duration-500 perspective-1000 group overflow-hidden"
         >
-            <div style={{ transform: "translateZ(50px)" }}>
-                <p className="text-2xl text-slate-800 dark:text-dark-100 mb-8 leading-snug font-medium italic">
-                    "{item.quote}"
-                </p>
-
-                <div className="flex items-center gap-4">
-                    <img
-                        src={item.avatar}
-                        alt={item.name}
-                        className="w-14 h-14 rounded-full bg-slate-100 dark:bg-dark-700 border-2 border-palette-200 dark:border-palette-700"
-                    />
+            <div style={{ transform: "translateZ(80px)" }} className="relative z-10">
+                <div className="flex items-center gap-4 mb-8">
+                    <div className="relative">
+                        <img
+                            src={item.avatar}
+                            alt={item.name}
+                            className="w-12 h-12 rounded-2xl bg-palette-100 dark:bg-palette-700 object-cover border border-palette-700/10 dark:border-white/10"
+                        />
+                        <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-palette-600 rounded-full border-2 border-white dark:border-palette-800" />
+                    </div>
                     <div>
-                        <h4 className="font-bold text-slate-950 dark:text-dark-100 text-base">
+                        <h4 className="font-bold text-palette-900 dark:text-white text-base tracking-tight">
                             {item.name}
                         </h4>
-                        <p className="text-palette-600 dark:text-palette-400 text-sm font-semibold">
+                        <p className="text-palette-600 dark:text-palette-200/60 text-xs font-semibold uppercase tracking-wider">
                             {item.role}
                         </p>
                     </div>
                 </div>
+
+                <p className="text-xl text-palette-800 dark:text-palette-100/90 leading-relaxed font-medium">
+                    "{item.quote}"
+                </p>
             </div>
 
-            {/* Background highlight */}
-            <div className="absolute inset-0 bg-gradient-to-br from-palette-700/5 to-transparent dark:from-palette-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
+            {/* Background decorative elements */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-palette-600/10 to-transparent rounded-full -mr-16 -mt-16 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-palette-200/20 to-transparent rounded-full -ml-16 -mb-16 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
         </motion.div>
     );
 };
@@ -111,14 +133,18 @@ const Results = () => {
     ];
 
     return (
-        <section className="py-24 bg-[#F9F8F3] dark:bg-dark-900 transition-colors duration-300 overflow-hidden">
-            <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
+        <section className="relative py-32 bg-palette-100 dark:bg-palette-900 transition-colors duration-500 overflow-hidden">
+            {/* Background Accents */}
+            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-palette-600/5 dark:bg-palette-600/10 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
+            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-palette-200/10 dark:bg-palette-200/5 rounded-full blur-[120px] translate-y-1/2 pointer-events-none" />
+
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="text-center mb-20">
                     <motion.span
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-xs font-black text-palette-600 dark:text-palette-400 uppercase tracking-[0.4em] mb-4 block"
+                        className="inline-block px-4 py-1.5 rounded-full bg-palette-600/10 dark:bg-palette-600/20 text-palette-600 dark:text-palette-200 text-[9px] font-black uppercase tracking-[0.3em] mb-6"
                     >
                         RELIED ON BY TOP PERFORMERS
                     </motion.span>
@@ -127,9 +153,10 @@ const Results = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-8xl font-serif text-slate-900 dark:text-dark-100 mb-8 leading-[1.1] tracking-tighter"
+                        className="text-4xl md:text-6xl font-serif text-palette-900 dark:text-white mb-6 leading-[1.1] tracking-tighter"
                     >
-                        Automation that <br /> <span className="text-palette-600">drives real results</span>
+                        Automation that <br />
+                        <span className="italic font-light text-palette-600 dark:text-palette-200">drives real results</span>
                     </motion.h2>
 
                     <motion.p
@@ -137,27 +164,37 @@ const Results = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-xl md:text-2xl text-slate-600 dark:text-dark-200 max-w-3xl mx-auto font-medium"
+                        className="text-base md:text-lg text-palette-800/70 dark:text-palette-100/60 max-w-xl mx-auto font-medium leading-relaxed"
                     >
                         Discover how leading teams accelerate pipeline and close more deals with intelligent outbound automation.
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                    {testimonials.map((item, index) => (
-                        <TiltCard key={index} item={item} index={index} />
-                    ))}
+                {/* Diagonal Grid Container */}
+                <div className="relative perspective-2000 py-20">
+                    <motion.div
+                        initial={{ opacity: 0, rotateX: 20, rotateY: -10, skewX: -5 }}
+                        whileInView={{ opacity: 1, rotateX: 25, rotateY: -15, skewX: -5 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto origin-center"
+                    >
+                        {testimonials.map((item, index) => (
+                            <TiltCard key={index} item={item} index={index} />
+                        ))}
+                    </motion.div>
                 </div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.6 }}
-                    className="text-center mt-20"
+                    transition={{ delay: 0.8 }}
+                    className="text-center mt-24"
                 >
-                    <button className="px-12 py-5 bg-palette-600 hover:bg-palette-700 text-white rounded-full font-bold text-lg transition-all shadow-2xl shadow-palette-600/30 hover:scale-105 active:scale-95">
-                        View More Success Stories
+                    <button className="group relative px-12 py-5 bg-palette-900 dark:bg-white text-white dark:text-palette-900 rounded-2xl font-bold text-lg transition-all overflow-hidden shadow-2xl hover:scale-105 active:scale-95">
+                        <span className="relative z-10">View More Success Stories</span>
+                        <div className="absolute inset-0 bg-palette-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                     </button>
                 </motion.div>
             </div>
@@ -166,3 +203,4 @@ const Results = () => {
 };
 
 export default Results;
+

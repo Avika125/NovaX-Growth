@@ -1,11 +1,14 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { Search, Mail, Brain, Calendar } from 'lucide-react';
+import GlowGrid from './GlowGrid';
 import './CardStack.css';
 
 const StackedCard = ({ feature, index, scrollYProgress }) => {
     const targetScale = 1 - ((4 - index) * 0.05);
     const range = [index * 0.25, 1];
     const scale = useTransform(scrollYProgress, range, [1, targetScale]);
+    const Icon = feature.icon;
 
     return (
         <div className="card-container">
@@ -16,15 +19,22 @@ const StackedCard = ({ feature, index, scrollYProgress }) => {
                 }}
                 className={`stacked-card bg-gradient-to-br ${feature.color}`}
             >
+                <div className="card-glass-overlay"></div>
                 <div className="card-content">
-                    <div className="card-emoji">{feature.emoji}</div>
+                    <div className="card-header">
+                        <div className="icon-box">
+                            <Icon size={32} className="text-white" />
+                        </div>
+                        <span className="step-pill">Phase 0{index + 1}</span>
+                    </div>
                     <div className="card-text">
-                        <h3 className="text-3xl md:text-5xl font-bold mb-4">{feature.title}</h3>
-                        <p className="text-lg md:text-xl font-medium opacity-90 max-w-xl">
+                        <h3 className="text-3xl md:text-5xl font-black mb-4 tracking-tight">{feature.title}</h3>
+                        <p className="text-lg md:text-xl font-medium text-white/80 max-w-xl leading-relaxed">
                             {feature.description}
                         </p>
-                        <a href="#" className="card-link inline-block mt-8 text-sm uppercase tracking-widest font-bold border-b border-white/20 pb-1 hover:border-white transition-colors">
-                            Learn More —
+                        <a href="#" className="card-link-new group inline-flex items-center gap-2 mt-8 text-sm uppercase tracking-[0.2em] font-bold">
+                            Explore Module
+                            <span className="group-hover:translate-x-1 transition-transform">→</span>
                         </a>
                     </div>
                 </div>
@@ -44,26 +54,26 @@ const OutboundIntelligence = () => {
         {
             title: "Lead analysis engine",
             description: "Analyze digital presence, identify gaps, and score opportunities. Instantly prioritize and recommend next steps.",
-            emoji: "🔍",
-            color: "from-blue-600 to-blue-900"
+            icon: Search,
+            color: "from-blue-600/80 via-blue-700/60 to-blue-900/90"
         },
         {
             title: "Personalized outreach",
             description: "Generate targeted emails and follow-ups using real-time insights. Increase engagement with tailored messaging.",
-            emoji: "✉️",
-            color: "from-indigo-600 to-indigo-900"
+            icon: Mail,
+            color: "from-indigo-600/80 via-indigo-700/60 to-indigo-900/90"
         },
         {
             title: "Reply intelligence",
             description: "Detect intent and sentiment in every reply. Extract key points and automate lead routing with accuracy.",
-            emoji: "🧠",
-            color: "from-purple-600 to-purple-900"
+            icon: Brain,
+            color: "from-purple-600/80 via-purple-700/60 to-purple-900/90"
         },
         {
             title: "Meeting scheduling",
             description: "Identify meeting requests, propose times, and automate scheduling. Maintain full control at every stage.",
-            emoji: "📅",
-            color: "from-slate-600 to-slate-900"
+            icon: Calendar,
+            color: "from-slate-600/80 via-slate-700/60 to-slate-900/90"
         }
     ];
 
@@ -79,6 +89,7 @@ const OutboundIntelligence = () => {
                         <span className="text-slate-400 opacity-50">Automated. Precise.</span>
                     </h2>
                 </div>
+                <GlowGrid />
             </div>
 
             <div className="cards-wrapper">
