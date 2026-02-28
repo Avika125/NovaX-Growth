@@ -3,12 +3,12 @@ import { useRef, useEffect, useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 const brands = [
-    { name: "Snowflake", logo: "https://cdn.simpleicons.org/snowflake/29B5E8" },
-    { name: "Databricks", logo: "https://cdn.simpleicons.org/databricks/FF3621" },
-    { name: "Stripe", logo: "https://cdn.simpleicons.org/stripe/008CDD" },
-    { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb/47A248" },
-    { name: "Retool", logo: "https://cdn.simpleicons.org/retool/3D3D3D" },
-    { name: "Airtable", logo: "https://cdn.simpleicons.org/airtable/18BFFF" },
+    { name: "Snowflake", logo: "https://cdn.simpleicons.org/snowflake/29b5e8" },
+    { name: "Databricks", logo: "https://cdn.simpleicons.org/databricks/ff3621" },
+    { name: "Stripe", logo: "https://cdn.simpleicons.org/stripe/008cdd" },
+    { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb/47a248" },
+    { name: "Retool", logo: "https://cdn.simpleicons.org/retool/3d3d3d" },
+    { name: "Airtable", logo: "https://cdn.simpleicons.org/airtable/18bfff" },
     { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel/000000" },
 ];
 

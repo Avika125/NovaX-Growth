@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import GlowGrid from './GlowGrid';
 
 const Lifecycle = () => {
     const steps = [
@@ -60,11 +61,8 @@ const Lifecycle = () => {
 
     return (
         <section className="py-24 bg-white dark:bg-dark-900 transition-colors duration-300 relative overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20 dark:opacity-10">
-                <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-blue-400 rounded-full blur-[120px]" />
-                <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-purple-400 rounded-full blur-[120px]" />
-            </div>
+            {/* Background elements - Applied same as Section 2 */}
+            <GlowGrid />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
@@ -129,28 +127,28 @@ const Lifecycle = () => {
                                 transition={{ delay: index * 0.1 }}
                                 className="relative group"
                             >
-                                <div className="flex flex-col h-full bg-white dark:bg-dark-800/50 p-8 rounded-3xl border border-slate-100 dark:border-dark-700/50 shadow-sm hover:shadow-xl hover:border-blue-500/30 dark:hover:border-blue-400/30 transition-all duration-500 backdrop-blur-sm">
+                                <div className="flex flex-col h-full bg-slate-900/[0.08] dark:bg-dark-800/30 p-8 rounded-3xl border border-slate-900/15 dark:border-dark-700/30 shadow-sm hover:shadow-xl hover:border-indigo-500/30 dark:hover:border-purple-400/30 transition-all duration-500 backdrop-blur-md">
                                     <div className={`w-14 h-14 rounded-2xl ${step.color} shadow-lg flex items-center justify-center text-2xl mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 text-white`}>
                                         {step.icon}
                                     </div>
 
-                                    <div className="absolute top-6 right-8 text-6xl font-black text-slate-50 dark:text-dark-900 leading-none select-none pointer-events-none">
+                                    <div className="absolute top-6 right-8 text-6xl font-black text-slate-900/5 dark:text-dark-100/5 leading-none select-none pointer-events-none">
                                         0{index + 1}
                                     </div>
 
-                                    <h4 className="text-xl font-bold text-slate-900 dark:text-dark-100 mb-3 relative z-10 transition-colors group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                                    <h4 className="text-xl font-bold text-slate-950 dark:text-dark-100 mb-3 relative z-10 transition-colors group-hover:text-indigo-600 dark:group-hover:text-purple-400">
                                         {step.title}
                                     </h4>
 
-                                    <p className="text-slate-600 dark:text-dark-300 text-sm leading-relaxed font-medium">
+                                    <p className="text-slate-700 dark:text-dark-200 text-sm leading-relaxed font-medium">
                                         {step.desc}
                                     </p>
 
-                                    {/* Step number disc for desktop flow indicator */}
+                                    {/* Theme-responsive progress indicator */}
                                     <div className="mt-6 flex items-center gap-3">
-                                        <div className="h-0.5 flex-1 bg-slate-100 dark:bg-dark-700 overflow-hidden">
+                                        <div className="h-0.5 flex-1 bg-slate-200/50 dark:bg-dark-700/50 overflow-hidden rounded-full">
                                             <motion.div
-                                                className={`h-full ${step.color}`}
+                                                className={`h-full opacity-60 dark:opacity-40 ${step.color}`}
                                                 initial={{ width: 0 }}
                                                 whileInView={{ width: "100%" }}
                                                 viewport={{ once: true }}

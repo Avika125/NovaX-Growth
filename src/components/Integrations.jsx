@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
 
 const integrations = [
-    { name: "Salesforce", logo: "https://cdn.simpleicons.org/salesforce/00A1E0" },
-    { name: "HubSpot", logo: "https://cdn.simpleicons.org/hubspot/FF7A59" },
-    { name: "Pipedrive", logo: "https://cdn.simpleicons.org/pipedrive/3747A6" },
-    { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4A154B" },
-    { name: "Zapier", logo: "https://cdn.simpleicons.org/zapier/FF6600" },
-    { name: "LinkedIn", logo: "https://cdn.simpleicons.org/linkedin/0A66C2" },
-    { name: "Apollo", logo: "https://logo.clearbit.com/apollo.io" },
-    { name: "Outlook", logo: "https://cdn.simpleicons.org/microsoftoutlook/0078D4" },
-    { name: "Gmail", logo: "https://cdn.simpleicons.org/gmail/EA4335" },
-    { name: "Clay", logo: "https://logo.clearbit.com/clay.com" }
+    { name: "Salesforce", logo: "https://cdn.simpleicons.org/salesforce/00a1e0" },
+    { name: "HubSpot", logo: "https://cdn.simpleicons.org/hubspot/ff7a59" },
+    { name: "Pipedrive", logo: "https://cdn.simpleicons.org/pipedrive/3747a6" },
+    { name: "Slack", logo: "https://cdn.simpleicons.org/slack/4a154b" },
+    { name: "Zapier", logo: "https://cdn.simpleicons.org/zapier/ff6600" },
+    { name: "LinkedIn", logo: "https://cdn.simpleicons.org/linkedin/0a66c2" },
+    { name: "Apollo", logo: "https://cdn.simpleicons.org/apollo/111111" },
+    { name: "Outlook", logo: "https://cdn.simpleicons.org/microsoft-outlook/0078d4" },
+    { name: "Gmail", logo: "https://cdn.simpleicons.org/gmail/ea4335" },
+    { name: "Clay", logo: "https://ui-avatars.com/api/?name=Clay&background=000&color=fff&size=128&bold=true" }
 ];
 
 const Integrations = () => {
