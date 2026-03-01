@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Layout from '../layouts/Layout';
 import ProcessHero from '../components/ProcessHero';
 import ProcessBridge from '../components/ProcessBridge';
 import ProcessSnapshots from '../components/ProcessSnapshots';
@@ -16,8 +15,7 @@ const HowItWorks = () => {
     }, []);
 
     return (
-        <main className="min-h-screen bg-white dark:bg-dark-900 transition-colors duration-500">
-            <Navbar />
+        <Layout>
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -31,8 +29,7 @@ const HowItWorks = () => {
                 <ProcessFAQ />
                 <ProcessCTA />
             </motion.div>
-            <Footer />
-        </main>
+        </Layout>
     );
 };
 

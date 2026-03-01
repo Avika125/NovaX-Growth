@@ -15,8 +15,19 @@ const teamMembers = [
 
 const AboutTeam = () => {
     return (
-        <section className="py-24 bg-white dark:bg-dark-900 transition-colors duration-500">
-            <div className="container mx-auto px-6">
+        <section className="relative py-24 bg-white dark:bg-dark-900 transition-colors duration-500 overflow-hidden">
+            {/* Crisp CSS Grid Background */}
+            <div
+                className="absolute inset-0 z-0 pointer-events-none opacity-[0.2] dark:opacity-[0.3]"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(to right, rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
+                    `,
+                    backgroundSize: '40px 40px',
+                }}
+            />
+            <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
                     <motion.span
                         initial={{ opacity: 0 }}

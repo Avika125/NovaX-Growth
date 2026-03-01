@@ -24,6 +24,18 @@ const Navbar = () => {
         };
     }, []);
 
+    // Scroll Locking
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isMenuOpen]);
+
     const navLinks = [
         { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
@@ -44,7 +56,7 @@ const Navbar = () => {
         <motion.nav
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-6'
+            className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${isScrolled || isMenuOpen ? 'py-4' : 'py-6'
                 }`}
         >
             <div className="container mx-auto px-6">
@@ -61,13 +73,14 @@ const Navbar = () => {
                         <ThemeToggle />
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none z-[70] group"
+                            className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none z-[75] relative group"
                         >
                             <motion.span
                                 animate={{
                                     rotate: isMenuOpen ? 45 : 0,
                                     y: isMenuOpen ? 8 : 0,
                                 }}
+                                transition={{ type: "spring", stiffness: 300, damping: 25 }}
                                 className={`h-0.5 w-6 block transition-all rounded-full ${theme === 'dark' ? 'bg-palette-100' : 'bg-palette-900'}`}
                             />
                             <motion.span
@@ -81,6 +94,7 @@ const Navbar = () => {
                                     rotate: isMenuOpen ? -45 : 0,
                                     y: isMenuOpen ? -8 : 0,
                                 }}
+                                transition={{ type: "spring", stiffness: 300, damping: 25 }}
                                 className={`h-0.5 w-6 block transition-all rounded-full ${theme === 'dark' ? 'bg-palette-100' : 'bg-palette-900'}`}
                             />
                         </button>
@@ -126,7 +140,6 @@ const Navbar = () => {
                             transition={{ type: "spring", damping: 30, stiffness: 200, mass: 0.8 }}
                             className="fixed top-0 right-0 h-screen w-full md:w-[500px] bg-white dark:bg-dark-800 text-slate-900 dark:text-dark-100 z-[65] shadow-2xl overflow-hidden flex flex-col border-l border-slate-200 dark:border-dark-700"
                         >
-
                             <div className="flex-1 flex flex-col p-12 md:p-20 overflow-hidden">
                                 <div className="flex-1 flex flex-col justify-center space-y-16">
                                     {/* Menu Section */}

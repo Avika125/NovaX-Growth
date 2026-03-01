@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Layout from '../layouts/Layout';
 import SolutionsHero from '../components/SolutionsHero';
 import AutomationFlow from '../components/AutomationFlow';
 import IntelligenceAction from '../components/IntelligenceAction';
@@ -14,8 +13,7 @@ const Solutions = () => {
     }, []);
 
     return (
-        <main className="min-h-screen bg-white dark:bg-dark-900 transition-colors duration-500">
-            <Navbar />
+        <Layout>
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -27,8 +25,7 @@ const Solutions = () => {
                 <SolutionsFAQ />
                 <ContactSupport />
             </motion.div>
-            <Footer />
-        </main>
+        </Layout>
     );
 };
 
